@@ -58,7 +58,8 @@ copy /Y "%SRCD%zapret-opencode.cmd"         "%DEST%\" >nul
 copy /Y "%SRCD%zapret-opencode-stop.cmd"    "%DEST%\" >nul
 
 echo [5/6] Installing service "winws-opencode"...
-call "%DEST%\service_opencode_create.cmd"
+rem <nul swallows the standalone script's "pause" so install doesn't hang
+call "%DEST%\service_opencode_create.cmd" <nul
 
 echo [6/6] Installing watchdog task (every 5 min)...
 schtasks /Create /TN "zapret-opencode-watchdog" /TR "%DEST%\watchdog.cmd" /SC MINUTE /MO 5 /RU SYSTEM /RL HIGHEST /F >nul
