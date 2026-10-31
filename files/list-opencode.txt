@@ -1,0 +1,3 @@
+opencode.ai
+models.dev
+registry.npmjs.org

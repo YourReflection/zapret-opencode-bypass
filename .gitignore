@@ -1,0 +1,8 @@
+# Windows junk
+Thumbs.db
+Desktop.ini
+
+# downloaded binaries (never committed - fetched by install.cmd)
+*.exe
+*.dll
+*.sys
